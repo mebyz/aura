@@ -58,7 +58,7 @@ class ResamplingAudioChannel extends AudioChannel {
 				floatPosition = initialFloatPosition;
 
 				for (i in 0...samplesToWrite) {
-					var sampledVal: Float = Resampler.sampleAtTargetPositionLerp(data.getChannelView(c), floatPosition, this.sampleRate, sampleRate);
+					var sampledVal: Float = Resampler.sampleAtTargetPositionLerp(cast data.getChannelView(c), floatPosition, this.sampleRate, sampleRate);
 
 					outChannelView[samplesWritten + i] = sampledVal * pVolume.currentValue * pDstAttenuation.currentValue;
 
